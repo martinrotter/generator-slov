@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:orientation="vertical" >
+
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Mluvení"
+    android:id="@+id/btn_speech"
+    android:layout_gravity="center_horizontal"/>
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Kreslení"
+    android:id="@+id/btn_drawing"
+    android:layout_gravity="center_horizontal"/>
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Pantomima"
+    android:id="@+id/btn_pantomime"
+    android:layout_gravity="center_horizontal"/>
+
+  <TextView
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="cwqcwqc cwqc wcwqcwqc cwqcwqc cwqcwqcwq"
+    android:id="@+id/txt_word"
+    android:gravity="center"
+    android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
