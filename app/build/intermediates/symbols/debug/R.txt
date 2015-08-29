@@ -395,9 +395,9 @@ int id showTitle 0x7f0d0011
 int id split_action_bar 0x7f0d0007
 int id submit_area 0x7f0d003e
 int id tabMode 0x7f0d000b
-int id textView 0x7f0d0044
 int id title 0x7f0d0029
 int id top 0x7f0d001f
+int id txt_word 0x7f0d0044
 int id up 0x7f0d0008
 int id useLogo 0x7f0d0012
 int id withText 0x7f0d001a

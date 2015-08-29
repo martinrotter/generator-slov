@@ -1366,9 +1366,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f0d0007;
         public static final int submit_area=0x7f0d003e;
         public static final int tabMode=0x7f0d000b;
-        public static final int textView=0x7f0d0044;
         public static final int title=0x7f0d0029;
         public static final int top=0x7f0d001f;
+        public static final int txt_word=0x7f0d0044;
         public static final int up=0x7f0d0008;
         public static final int useLogo=0x7f0d0012;
         public static final int withText=0x7f0d001a;

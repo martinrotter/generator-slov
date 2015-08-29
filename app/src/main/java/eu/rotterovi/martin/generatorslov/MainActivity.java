@@ -4,8 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.apache.commons.io.IOUtils;
@@ -16,6 +18,10 @@ import java.io.StringWriter;
 
 public class MainActivity extends ActionBarActivity {
 
+  private WordGenerator speechGenerator;
+  private WordGenerator drawingGenerator;
+  private WordGenerator pantomimeGenerator;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // Set fullscreen.
@@ -25,18 +31,17 @@ public class MainActivity extends ActionBarActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-/*
-    InputStream raw = getResources().openRawResource(R.raw.words_speech);
+    Button btnSpeech = (Button) findViewById(R.id.btn_speech);
 
-    StringWriter writer = new StringWriter();
+    btnSpeech.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        // TODO: todo
+      }
+    });
+  }
 
-    try {
-      IOUtils.copy(raw, writer, "UTF-8");
-      raw.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    String theString = writer.toString();*/
+  private void displayWord(Word word) {
+    // TODO: todo
   }
 }
