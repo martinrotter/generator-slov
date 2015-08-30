@@ -18,8 +18,10 @@ public class WordGenerator {
   private String[] words;
   private Stack<Integer> indexes = new Stack<Integer>();
   private Random everyoneGenerator = new Random(System.nanoTime());
+  private WordType type;
 
-  public WordGenerator(InputStream textResource) {
+  public WordGenerator(InputStream textResource, WordType type) {
+    this.type = type;
     loadWords(textResource);
   }
 
@@ -29,7 +31,7 @@ public class WordGenerator {
       generateIndexes();
     }
 
-    return new Word(words[indexes.pop()], everyoneGenerator.nextInt(100) < 17);
+    return new Word(words[indexes.pop()], everyoneGenerator.nextInt(10) < 2, type);
   }
 
   private void loadWords(InputStream textResource) {
