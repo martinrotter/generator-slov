@@ -1,6 +1,11 @@
 package eu.rotterovi.martin.generatorslov;
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable {
+  private String word;
+  private Boolean isForEverybody;
+
   public Word(String word, Boolean isForEverybody) {
     this.word = word;
     this.isForEverybody = isForEverybody;
@@ -13,7 +18,4 @@ public class Word {
   public String getWord() {
     return word;
   }
-
-  private String word;
-  private Boolean isForEverybody;
 }

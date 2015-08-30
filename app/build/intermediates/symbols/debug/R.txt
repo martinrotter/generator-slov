@@ -449,7 +449,9 @@ int string abc_searchview_description_voice 0x7f07000c
 int string abc_shareactionprovider_share_with 0x7f07000d
 int string abc_shareactionprovider_share_with_application 0x7f07000e
 int string app_name 0x7f07000f
-int string hello_blank_fragment 0x7f070010
+int string btn_drawing_title 0x7f070010
+int string btn_pantomime_title 0x7f070011
+int string btn_speech_title 0x7f070012
 int style AppTheme 0x7f0b0063
 int style Base_TextAppearance_AppCompat 0x7f0b0025
 int style Base_TextAppearance_AppCompat_Body1 0x7f0b0026

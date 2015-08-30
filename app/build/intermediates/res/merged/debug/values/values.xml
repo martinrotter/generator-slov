@@ -161,7 +161,9 @@
     <!-- From: file:/mnt/data/Martin/Coding/Projekty/generator-slov/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Generátor Slov</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_drawing_title">Kreslení</string>
+    <string name="btn_pantomime_title">Pantomima</string>
+    <string name="btn_speech_title">Mluvení</string>
     <!-- From: file:/mnt/data/Martin/Coding/Projekty/generator-slov/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat">

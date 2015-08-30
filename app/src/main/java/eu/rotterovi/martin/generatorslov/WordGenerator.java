@@ -1,7 +1,5 @@
 package eu.rotterovi.martin.generatorslov;
 
-import android.util.Range;
-
 import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.DiscreteDomain;
 
@@ -10,6 +8,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -21,7 +20,7 @@ public class WordGenerator {
   private Random everyoneGenerator = new Random(System.nanoTime());
 
   public WordGenerator(InputStream textResource) {
-
+    loadWords(textResource);
   }
 
   public Word getNextWord() {
@@ -47,11 +46,12 @@ public class WordGenerator {
   }
 
   private void generateIndexes() {
-    List<Integer> sequence = (List<Integer>) ContiguousSet.create(com.google.common.collect.Range.closedOpen(0, words.length), DiscreteDomain.integers());
+    List<Integer> notImmutable = new ArrayList<Integer>();
 
-    Collections.shuffle(sequence, new Random(System.nanoTime()));
+    notImmutable.addAll(ContiguousSet.create(com.google.common.collect.Range.closedOpen(0, words.length), DiscreteDomain.integers()).asList());
+    Collections.shuffle(notImmutable, new Random(System.nanoTime()));
 
     indexes.clear();
-    indexes.addAll(sequence);
+    indexes.addAll(notImmutable);
   }
 }
