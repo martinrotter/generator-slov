@@ -1,12 +1,18 @@
 app/build
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+gradle
+local.properties
+.idea/workspace.xml
+.idea/libraries
+.idea/tasks.xml
+.idea/vcs.xml
+.idea/datasources.xml
+.idea/dataSources.ids
 .DS_Store
-/build
-/captures
+build
+captures
 
+*.iws
 *.dex
 *.apk
 *.ap_
