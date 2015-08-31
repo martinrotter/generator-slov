@@ -4,6 +4,7 @@ gradle
 local.properties
 .idea/workspace.xml
 .idea/libraries
+.idea/codeStyleSettings.xml
 .idea/tasks.xml
 .idea/vcs.xml
 .idea/datasources.xml
