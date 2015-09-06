@@ -3,7 +3,14 @@
               android:layout_height="match_parent"
               android:padding="24dp"
               android:baselineAligned="false"
-              android:orientation="vertical">
+              android:orientation="horizontal">
+
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_weight="1"
+  android:layout_width="0dp"
+  android:gravity="center_vertical"
+  android:layout_height="fill_parent">
 
   <Button
     android:layout_width="fill_parent"
@@ -25,14 +32,15 @@
     android:text="@string/btn_pantomime_title"
     android:id="@+id/btn_pantomime"
     android:layout_gravity="center_horizontal"/>
+</LinearLayout>
 
   <TextView
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:id="@+id/txt_word"
-    android:gravity="center"
-    android:layout_gravity="center_horizontal"/>
+    android:layout_gravity="center"
+    android:gravity="center"/>
 
 </LinearLayout>

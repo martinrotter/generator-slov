@@ -13,6 +13,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.common.base.Objects;
+
 public class MainActivity extends ActionBarActivity {
 
   private WordGenerator speechGenerator;
@@ -20,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
   private WordGenerator pantomimeGenerator;
   private TextView txtWord;
   private ColorStateList txtDefaultColors;
-  private Word currentWord;
+  private Word currentWord = null;
 
   @Override
   protected void onSaveInstanceState(Bundle outState) {
@@ -61,7 +63,12 @@ public class MainActivity extends ActionBarActivity {
 
     if (savedInstanceState != null) {
       // We are recreating activity.
-      currentWord = (Word) savedInstanceState.getSerializable("current_word");
+      Object serializedWord = savedInstanceState.getSerializable("current_word");
+
+      if (serializedWord != null) {
+        currentWord = (Word) serializedWord;
+      }
+
       displayCurrentWord();
     }
 
@@ -89,19 +96,22 @@ public class MainActivity extends ActionBarActivity {
   }
 
   private void displayWord(Word word) {
-    Spannable leading = new SpannableString(word.getType().toString() + ": ");
-    leading.setSpan(new ForegroundColorSpan(txtDefaultColors.getDefaultColor()), 0, leading.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+    if (word != null) {
+      Spannable wordText = new SpannableString(word.getWord());
+      Spannable leading = new SpannableString(word.getType().toString() + ": ");
+      leading.setSpan(new ForegroundColorSpan(txtDefaultColors.getDefaultColor()), 0, leading.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-    Spannable wordText = new SpannableString(word.getWord());
+      if (word.getIsForEverybody()) {
+        wordText.setSpan(new ForegroundColorSpan(Color.RED), 0, wordText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+      } else {
+        wordText.setSpan(new ForegroundColorSpan(txtDefaultColors.getDefaultColor()), 0, wordText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+      }
 
-    if (word.getIsForEverybody()) {
-      wordText.setSpan(new ForegroundColorSpan(Color.RED), 0, wordText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+      txtWord.setText(leading);
+      txtWord.append(wordText);
     }
     else {
-      wordText.setSpan(new ForegroundColorSpan(txtDefaultColors.getDefaultColor()), 0, wordText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+      txtWord.setText("");
     }
-
-    txtWord.setText(leading);
-    txtWord.append(wordText);
   }
 }
