@@ -2,45 +2,23 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:padding="24dp"
-              android:baselineAligned="false"
+              android:keepScreenOn="true"
+              android:baselineAligned="true"
               android:orientation="horizontal">
-
-<LinearLayout
-  android:orientation="vertical"
-  android:layout_weight="1"
-  android:layout_width="0dp"
-  android:gravity="center_vertical"
-  android:layout_height="fill_parent">
-
-  <Button
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/btn_speech_title"
-    android:id="@+id/btn_speech"
-    android:layout_gravity="center_horizontal"/>
-
-  <Button
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/btn_drawing_title"
-    android:id="@+id/btn_drawing"
-    android:layout_gravity="center_horizontal"/>
-
-  <Button
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/btn_pantomime_title"
-    android:id="@+id/btn_pantomime"
-    android:layout_gravity="center_horizontal"/>
-</LinearLayout>
-
-  <TextView
+  <LinearLayout
+    android:orientation="vertical"
     android:layout_weight="1"
     android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:id="@+id/txt_word"
-    android:layout_gravity="center"
-    android:gravity="center"/>
-
+    android:gravity="center_vertical"
+    android:layout_height="fill_parent">
+    <include layout="@layout/merge_buttons"/>
+  </LinearLayout>
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:gravity="center_vertical"
+    android:layout_height="fill_parent">
+    <include layout="@layout/merge_text"/>
+  </LinearLayout>
 </LinearLayout>
